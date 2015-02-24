@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="LSSignatureControls">
+    <Name>Signature Controls for LightSwitch</Name>
+    <Author>Centrolutions</Author>
+    <Version>1.0</Version>
+    <Description xml:space="preserve">LightSwitch Control Extension that allows the user to use a mouse, touch (finger), or stylus to sign their name or draw a picture. Great for membership databases, document databases, and pretty much any other applicaiton that requires a signature to be produced.</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>http://www.centrolutions.com</MoreInfoUrl>
+    <License>Software License.txt</License>
+    <Icon>pencil_48.png</Icon>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>VSLS</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>VSLS</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.5" />
+  </Identifier>
+  <References />
+  <Content>
+    <CustomExtension Type="LightSwitchPackage">|LSSignatureControls.Lspkg;LspkgOutputGroup|</CustomExtension>
+  </Content>
+</Vsix>

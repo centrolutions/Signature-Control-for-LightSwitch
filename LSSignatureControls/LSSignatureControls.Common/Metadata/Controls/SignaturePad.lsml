@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ModelFragment
+  xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Control Name="SignaturePad"
+           SupportedContentItemKind="Value"
+           DesignerImageResource="LSSignatureControls.SignaturePad::ControlImage">
+    <Control.Attributes>
+      <DisplayName Value="Signature Pad" />
+    </Control.Attributes>
+    <Control.SupportedDataTypes>
+      <SupportedDataType DataType="Microsoft.LightSwitch.Extensions:Image"/>
+    </Control.SupportedDataTypes>
+
+
+    <Control.Properties>
+
+      <ControlProperty Name="ImageFormat"
+                       PropertyType=":String"
+                       CategoryName="Appearance"
+                       EditorVisibility="PropertySheet">
+        <ControlProperty.Attributes>
+          <DisplayName Value="Image Format" />
+          <Description Value="Set which image format to save the images in the database with." />
+          <SupportedValuesExclusive />
+          <SupportedValue DisplayName="PNG (lossless)" Value="PNG" />
+          <SupportedValue DisplayName="JPG (lossy/compressed)" Value="JPG" />
+        </ControlProperty.Attributes>
+        <ControlProperty.DefaultValueSource>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":String" Value="JPG" />
+          </ScreenExpressionTree>
+        </ControlProperty.DefaultValueSource>
+      </ControlProperty>
+
+      <ControlProperty Name="InkStrokeWidth"
+                      PropertyType=":Int32"
+                      IsReadOnly="False"
+                      CategoryName="Appearance"
+                      EditorVisibility="PropertySheet">
+        <ControlProperty.Attributes>
+          <DisplayName Value="Ink Stroke Width"/>
+          <Description Value="Set the pen's ink stroke width."/>
+        </ControlProperty.Attributes>
+        <ControlProperty.DefaultValueSource>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":Int32" Value="2" />
+          </ScreenExpressionTree>
+        </ControlProperty.DefaultValueSource>
+      </ControlProperty>
+      <ControlProperty Name="InkStrokeHeight"
+                      PropertyType=":Int32"
+                      IsReadOnly="False"
+                      CategoryName="Appearance"
+                      EditorVisibility="PropertySheet">
+        <ControlProperty.Attributes>
+          <DisplayName Value="Ink Stroke Height"/>
+          <Description Value="Set the pen's stroke height."/>
+        </ControlProperty.Attributes>
+        <ControlProperty.DefaultValueSource>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":Int32" Value="2" />
+          </ScreenExpressionTree>
+        </ControlProperty.DefaultValueSource>
+      </ControlProperty>
+
+      <ControlProperty Name="IsClearContentButtonVisible"
+                       PropertyType=":Boolean"
+                       IsReadOnly="False"
+                       CategoryName="Appearance"
+                       EditorVisibility="PropertySheet">
+        <ControlProperty.Attributes>
+          <DisplayName Value="Show Clear Button" />
+          <Description Value="If checked, the clear button will be shown" />
+        </ControlProperty.Attributes>
+        <ControlProperty.DefaultValueSource>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":Boolean" Value="True" />
+          </ScreenExpressionTree>
+        </ControlProperty.DefaultValueSource>
+      </ControlProperty>
+
+    </Control.Properties>
+
+    <!-- override some default properties so we can set their default values -->
+    <Control.PropertySources>
+      <ControlPropertySource Property=":RootControl/Properties[HorizontalAlignment]">
+        <ControlPropertySource.Source>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":String" Value="Left" />
+          </ScreenExpressionTree>
+        </ControlPropertySource.Source>
+      </ControlPropertySource>
+
+      <ControlPropertySource Property=":RootControl/Properties[VerticalAlignment]">
+        <ControlPropertySource.Source>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":String" Value="Top" />
+          </ScreenExpressionTree>
+        </ControlPropertySource.Source>
+      </ControlPropertySource>
+
+      <ControlPropertySource Property=":RootControl/Properties[HeightSizingMode]">
+        <ControlPropertySource.Source>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":String" Value="Pixels" />
+          </ScreenExpressionTree>
+        </ControlPropertySource.Source>
+      </ControlPropertySource>
+
+      <ControlPropertySource Property=":RootControl/Properties[Height]">
+        <ControlPropertySource.Source>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":Double" Value="200" />
+          </ScreenExpressionTree>
+        </ControlPropertySource.Source>
+      </ControlPropertySource>
+
+      <ControlPropertySource Property=":RootControl/Properties[WidthSizingMode]">
+        <ControlPropertySource.Source>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":String" Value="Pixels" />
+          </ScreenExpressionTree>
+        </ControlPropertySource.Source>
+      </ControlPropertySource>
+
+      <ControlPropertySource Property=":RootControl/Properties[Width]">
+        <ControlPropertySource.Source>
+          <ScreenExpressionTree>
+            <ConstantExpression ResultType=":Double" Value="300" />
+          </ScreenExpressionTree>
+        </ControlPropertySource.Source>
+      </ControlPropertySource>
+
+    </Control.PropertySources>
+  </Control>
+
+</ModelFragment>

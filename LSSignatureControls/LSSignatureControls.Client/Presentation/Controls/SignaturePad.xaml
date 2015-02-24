@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="LSSignatureControls.Presentation.Controls.SignaturePad"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:framework="clr-namespace:Microsoft.LightSwitch.Presentation.Framework;assembly=Microsoft.LightSwitch.Client"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:LSSignatureControls.Presentation.Controls;assembly=LSSignatureControls.Client"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:centro="clr-namespace:Centrolutions.Ink.Silverlight;assembly=Centrolutions.Ink.Silverlight"
+    mc:Ignorable="d"
+    d:DesignHeight="200" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ImageConverter x:Key="imageConverter" ImageType="JPG" />
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <framework:StatesControl Name="statesControl" Loaded="statesControl_Loaded" HorizontalAlignment="Left">
+            <centro:SignaturePad Name="SigPad"
+                                 Source="{Binding Path=Value, Mode=TwoWay, Converter={StaticResource imageConverter}}"
+                                 ToolTipService.ToolTip="{Binding Description}"
+                                 IsReadOnly="{Binding IsReadOnly}"
+                                 PenHeight="{Binding Properties[LSSignatureControls:SignaturePad/InkStrokeHeight]}"
+                                 PenWidth="{Binding Properties[LSSignatureControls:SignaturePad/InkStrokeWidth]}"
+                                 SignatureClearing="SigPad_SignatureClearing" />
+        </framework:StatesControl>
+    </Grid>
+</UserControl>
